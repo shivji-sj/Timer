@@ -2,8 +2,7 @@
 import streamlit as st
 import time
 from  PIL import Image
-import audioplayer
-from audioplayer import AudioPlayer
+import winsound
 
 # Adding image 
 st.title("Timer")
@@ -44,7 +43,7 @@ def main():
 		if st.button("Start"):
 			countdown(time_in_second)
 			# adding sound
-			AudioPlayer("alram.mp3").play(block=True)
+			winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
 
 	with col2:
 		st.button("Stop")
