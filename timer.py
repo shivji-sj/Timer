@@ -1,6 +1,6 @@
 # making the timer app in streamlit
 import streamlit as st
-import time, playsound
+import time
 from  PIL import Image
 from audioplayer import AudioPlayer
 
