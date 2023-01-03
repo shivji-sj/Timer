@@ -2,6 +2,7 @@
 import streamlit as st
 import time
 from  PIL import Image
+import audioplayer
 from audioplayer import AudioPlayer
 
 # Adding image 
