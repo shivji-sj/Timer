@@ -1,8 +1,17 @@
 # making the timer app in streamlit
 import streamlit as st
-import time
+import time, playsound
+from  PIL import Image
+from audioplayer import AudioPlayer
 
+# Adding image 
+st.title("Timer")
+image = Image.open("timer3.jpg")
+st.image(image)
 
+# link credit
+url = "https://unsplash.com/photos/BXOXnQ26B7o"
+st.markdown("Image Credit : [Unsplash](%s)" % url) # st.write()  we also use
 
 
 # countdown function to perform timer operation
@@ -20,10 +29,9 @@ def countdown(ts):
 		
 
 def main():
-	st.title("Timer")
 	
 	# imput variables
-	time_in_minute = st.number_input("Time in Minute"	, min_value=1)
+	time_in_minute = st.number_input("Time in Minute"	, min_value=0)
 	time_in_second = time_in_minute*60
 
 
@@ -34,6 +42,8 @@ def main():
 	with col1:
 		if st.button("Start"):
 			countdown(time_in_second)
+			# adding sound
+			AudioPlayer("alram.mp3").play(block=True)
 
 	with col2:
 		st.button("Stop")
